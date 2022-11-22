@@ -1,0 +1,147 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --negro: #020202;
+    --negroClaro: #2c2c2c;
+    --blanco: #f1f1f1;
+    --rojo: #c2185b;
+    --secundario: #f84174;
+    --gris: #40444F;
+    --grisClaro: #c1c1c1
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: var(--negroClaro) !important;
+    overflow: hidden;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--negroClaro);
+}
+
+.body {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--negro);
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    color: var(--blanco);
+}
+
+.text-white {
+    color: var(--blanco) !important;
+}
+
+.bg-negro {
+    background-color: var(--negro) !important;
+}
+
+.bg-x {
+    background-color: var(--negroClaro) !important;
+    color: var(--blanco) !important;
+}
+
+.bg-y {
+    background-color: var(--gris) !important;
+}
+
+form,
+input,
+label,
+p {
+    color: white !important;
+}
+
+.btn-primary {
+    background-color: var(--rojo) !important;
+}
+
+.btn-primary:hover {
+    color: var(--blanco);
+    background-color: var(--secundario) !important;
+}
+
+a {
+    color: var(--secundario) !important;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--rojo) !important;
+}
+
+.toast-container > div {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5) !important;
+}
+
+.color-primario {
+    color: var(--rojo);
+}
+
+.color-blanco {
+    color: var(--blanco);
+}
+
+
+
+
+ol, ul {
+    padding-left: 0rem !important;
+}
+
+.form-control {
+    padding: .79rem .75rem !important;
+
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    left: 280px;
+    width: calc(100% - 250px);
+    transition: all .3s ease;
+    padding: 8px 40px;
+}
+
+.home .title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+
+
+.imagen {
+    max-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 70%;
+    object-fit: fill;
+}

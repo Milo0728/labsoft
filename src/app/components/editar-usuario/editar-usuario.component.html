@@ -1,0 +1,171 @@
+<app-navbar></app-navbar>
+<section class="home">
+    <div class="title text-center">EDITAR USUARIO</div>
+
+    <div class="pricing-header">
+        <button routerLink="/dashboard" id="btnNuevo" type="button" class="btn btn-dark" data-toggle="modal"><i
+                class="fa-sharp fa-solid fa-arrow-left icon"></i> Volver</button>
+    </div>
+
+    <div class="body mt-5">
+        <form [formGroup]="usuarioEditForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('nombre').invalid && (usuarioEditForm.get('nombre').dirty || usuarioEditForm.get('nombre').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('nombre').hasError('required')">
+                    Este campo es requerido
+                </small>
+
+                <small class="text-danger" *ngIf="usuarioEditForm.get('nombre').hasError('pattern')">
+                    Ingrese un nombre válido
+                </small>
+
+
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('nombre').valid && 
+                    (usuarioEditForm.get('nombre').dirty || usuarioEditForm.get('nombre').touched)" [class.invalid]="usuarioEditForm.get('nombre').invalid && 
+                       (usuarioEditForm.get('nombre').dirty || usuarioEditForm.get('nombre').touched)"
+                        class="fa-solid fa-user-tag"></i>
+                </span>
+                <input formControlName="nombre" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Nombre" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('apellido').invalid && (usuarioEditForm.get('apellido').dirty || usuarioEditForm.get('apellido').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('apellido').hasError('required')">
+                    Este campo es requerido
+                </small>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('apellido').valid && 
+                    (usuarioEditForm.get('apellido').dirty || usuarioEditForm.get('apellido').touched)"
+                        [class.invalid]="usuarioEditForm.get('apellido').invalid && 
+                       (usuarioEditForm.get('apellido').dirty || usuarioEditForm.get('apellido').touched)"
+                        class="fa-solid fa-tags"></i>
+                </span>
+                <input formControlName="apellido" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Apellido" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('correo').invalid && (usuarioEditForm.get('correo').dirty || usuarioEditForm.get('correo').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('correo').hasError('required')">
+                    Este campo es requerido
+                </small>
+
+                <small class="text-danger" *ngIf="usuarioEditForm.get('correo').hasError('pattern')">
+                    No reconocemos ese formato de correo
+                </small>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i class="fa-sharp fa-solid fa-envelope gris"></i>
+                </span>
+                <input readonly formControlName="correo" type="email" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Correo" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('direccion').invalid && (usuarioEditForm.get('direccion').dirty || usuarioEditForm.get('direccion').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('direccion').hasError('required')">
+                    La dirección es requerida.
+                </small>
+
+                <small class="text-danger" *ngIf="usuarioEditForm.get('direccion').hasError('pattern')">
+                    Ingrese una dirección válida
+                </small>
+
+
+            </div>
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('telefono').invalid && (usuarioEditForm.get('telefono').dirty || usuarioEditForm.get('telefono').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('telefono').hasError('required')">
+                    El telefono es requerido.
+                </small>
+
+                <small class="text-danger" *ngIf="usuarioEditForm.get('telefono').hasError('pattern')">
+                    Ingrese un número válido de 10 digitos
+                </small>
+
+
+
+            </div>
+
+            <div class="mensajes"
+                *ngIf="usuarioEditForm.get('edad').invalid && (usuarioEditForm.get('edad').dirty || usuarioEditForm.get('edad').touched)">
+                <small class="text-danger" *ngIf="usuarioEditForm.get('edad').hasError('required')">
+                    La edad es requerida.
+                </small>
+                <small class="text-danger" *ngIf="usuarioEditForm.get('edad').hasError('pattern')">
+                    Ingrese una edad válida
+                </small>
+            </div>
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('direccion').valid && 
+                    (usuarioEditForm.get('direccion').dirty || usuarioEditForm.get('direccion').touched)"
+                        [class.invalid]="usuarioEditForm.get('direccion').invalid && 
+                       (usuarioEditForm.get('direccion').dirty || usuarioEditForm.get('direccion').touched)"
+                        class="fa-solid fa-location-dot"></i>
+                </span>
+                <input formControlName="direccion" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Dirección" required aria-describedby="basic-addon1">
+
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('telefono').valid &&
+                    (usuarioEditForm.get('telefono').dirty || usuarioEditForm.get('telefono').touched)"
+                        [class.invalid]="usuarioEditForm.get('telefono').invalid && 
+                       (usuarioEditForm.get('telefono').dirty || usuarioEditForm.get('telefono').touched)"
+                        class="fa-solid fa-phone"></i>
+                </span>
+                <input formControlName="telefono" type="tel" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Teléfono" required aria-describedby="basic-addon1">
+
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('edad').valid && 
+                    (usuarioEditForm.get('edad').dirty || usuarioEditForm.get('edad').touched)" [class.invalid]="usuarioEditForm.get('edad').invalid && 
+                       (usuarioEditForm.get('edad').dirty || usuarioEditForm.get('edad').touched)"
+                        class="fa-regular fa-address-card"></i>
+                </span>
+                <input formControlName="edad" type="number" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Edad" required aria-describedby="basic-addon1">
+            </div>
+            <!-- 
+            <div class="mb-3">
+                <label formControlName="imagen" for="formFile" class="form-label formFile shadow-none">Seleccione foto
+                    de perfil</label>
+                <input class="form-control bg-x" type="file" id="formFile">
+            </div> -->
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="usuarioEditForm.get('imagen').valid && 
+                    (usuarioEditForm.get('imagen').dirty || usuarioEditForm.get('imagen').touched)"
+                        class="fa-solid fa-image"></i>
+                </span>
+                <input formControlName="imagen" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Link imagen" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mt-3 d-grid gap-2">
+                <button [disabled]="usuarioEditForm.invalid" type="submit"
+                    class="btn btn-warning btn-lg border-0 shadow-none">Modificar usuario</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

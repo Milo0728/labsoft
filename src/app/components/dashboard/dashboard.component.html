@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<section class="home">
+    <div class="title text-center">CRUD</div>
+
+    <div class="pricing-header">
+
+        <button routerLink="/crear-usuario" id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal"><i
+                class="fa-sharp fa-solid fa-right-from-bracket icon"></i> Crear</button>
+
+        <table class="table table-hover table-striped mt-4">
+            <thead class="bg-negro text-white">
+                <tr>
+                    <th>Correo</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>Dirección</th>
+                    <th>Imagen</th>
+                    <th>Creador</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let usuario of Usuarios">
+                    <td>{{usuario.correo}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.edad}}</td>
+                    <td>{{usuario.telefono}}</td>
+                    <td>{{usuario.direccion}}</td>
+                    <td><img src="{{usuario.imagen ? usuario.imagen : './assets/img/usuario.png'}}"></td>
+                    <td>{{usuario.creador}}</td>
+                    <td>
+                        <button routerLink="/editar-usuario/{{usuario.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                        <button (click)="deleteRow(usuario)" class="btn btn-outline-danger mt-1"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+</section>

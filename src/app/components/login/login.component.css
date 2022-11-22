@@ -1,0 +1,21 @@
+.redes {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.redes img {
+    width: 100%;
+    max-width: 35px;
+}
+
+
+.valid {
+    color: greenyellow;
+}
+
+.invalid {
+    color: #f84174;
+}

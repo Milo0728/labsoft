@@ -1,0 +1,16 @@
+.valid {
+    color: greenyellow;
+}
+
+.invalid {
+    color: #f84174;
+}
+
+.form-text {
+    font-size: 12px;
+}
+
+.mensajes {
+    line-height: 1;
+    margin-bottom: 5px;
+}

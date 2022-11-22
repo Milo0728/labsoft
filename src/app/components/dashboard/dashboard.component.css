@@ -1,0 +1,26 @@
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    font-size: 20px;
+}
+
+.btn {
+    display: flex;
+}
+
+td {
+    color: white !important;
+}
+
+.fa-trash {
+    margin-top: 5px;
+}
+
+td img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 15px;
+}

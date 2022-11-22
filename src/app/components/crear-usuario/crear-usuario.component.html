@@ -1,0 +1,188 @@
+<app-navbar></app-navbar>
+<section class="home">
+    <div class="title text-center">CREAR USUARIO</div>
+
+    <div class="pricing-header">
+        <button routerLink="/dashboard" id="btnNuevo" type="button" class="btn btn-dark" data-toggle="modal"><i
+                class="fa-sharp fa-solid fa-arrow-left icon"></i> Volver</button>
+    </div>
+
+    <div class="body mt-5">
+        <form [formGroup]="crearUsuariosForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('nombre').invalid && (crearUsuariosForm.get('nombre').dirty || crearUsuariosForm.get('nombre').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('nombre').hasError('required')">
+                    Este campo es requerido
+                </small>
+
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('nombre').hasError('pattern')">
+                    Ingrese un nombre válido
+                </small>
+
+
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('nombre').valid && 
+                    (crearUsuariosForm.get('nombre').dirty || crearUsuariosForm.get('nombre').touched)"
+                        [class.invalid]="crearUsuariosForm.get('nombre').invalid && 
+                       (crearUsuariosForm.get('nombre').dirty || crearUsuariosForm.get('nombre').touched)"
+                        class="fa-solid fa-user-tag"></i>
+                </span>
+                <input formControlName="nombre" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Nombre" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('apellido').invalid && (crearUsuariosForm.get('apellido').dirty || crearUsuariosForm.get('apellido').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('apellido').hasError('required')">
+                    Este campo es requerido
+                </small>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('apellido').valid && 
+                    (crearUsuariosForm.get('apellido').dirty || crearUsuariosForm.get('apellido').touched)"
+                        [class.invalid]="crearUsuariosForm.get('apellido').invalid && 
+                       (crearUsuariosForm.get('apellido').dirty || crearUsuariosForm.get('apellido').touched)"
+                        class="fa-solid fa-tags"></i>
+                </span>
+                <input formControlName="apellido" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Apellido" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('correo').invalid && (crearUsuariosForm.get('correo').dirty || crearUsuariosForm.get('correo').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('correo').hasError('required')">
+                    Este campo es requerido
+                </small>
+
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('correo').hasError('pattern')">
+                    No reconocemos ese formato de correo
+                </small>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('correo').valid && 
+                    (crearUsuariosForm.get('correo').dirty || crearUsuariosForm.get('correo').touched)"
+                        [class.invalid]="crearUsuariosForm.get('correo').invalid && 
+                       (crearUsuariosForm.get('correo').dirty || crearUsuariosForm.get('correo').touched)"
+                        class="fa-sharp fa-solid fa-envelope"></i>
+                </span>
+                <input formControlName="correo" type="email" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Correo" required aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('direccion').invalid && (crearUsuariosForm.get('direccion').dirty || crearUsuariosForm.get('direccion').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('direccion').hasError('required')">
+                    La dirección es requerida.
+                </small>
+
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('direccion').hasError('pattern')">
+                    Ingrese una dirección válida
+                </small>
+
+
+            </div>
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('telefono').invalid && (crearUsuariosForm.get('telefono').dirty || crearUsuariosForm.get('telefono').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('telefono').hasError('required')">
+                    El telefono es requerido.
+                </small>
+
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('telefono').hasError('pattern')">
+                    Ingrese un número válido de 10 digitos
+                </small>
+
+
+
+            </div>
+
+            <div class="mensajes"
+                *ngIf="crearUsuariosForm.get('edad').invalid && (crearUsuariosForm.get('edad').dirty || crearUsuariosForm.get('edad').touched)">
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('edad').hasError('required')">
+                    La edad es requerida.
+                </small>
+                <small class="text-danger" *ngIf="crearUsuariosForm.get('edad').hasError('pattern')">
+                    Ingrese una edad válida
+                </small>
+            </div>
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('direccion').valid && 
+                    (crearUsuariosForm.get('direccion').dirty || crearUsuariosForm.get('direccion').touched)"
+                        [class.invalid]="crearUsuariosForm.get('direccion').invalid && 
+                       (crearUsuariosForm.get('direccion').dirty || crearUsuariosForm.get('direccion').touched)"
+                        class="fa-solid fa-location-dot"></i>
+                </span>
+                <input formControlName="direccion" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Dirección" required aria-describedby="basic-addon1">
+
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('telefono').valid &&
+                    (crearUsuariosForm.get('telefono').dirty || crearUsuariosForm.get('telefono').touched)"
+                        [class.invalid]="crearUsuariosForm.get('telefono').invalid && 
+                       (crearUsuariosForm.get('telefono').dirty || crearUsuariosForm.get('telefono').touched)"
+                        class="fa-solid fa-phone"></i>
+                </span>
+                <input formControlName="telefono" type="tel" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Teléfono" required aria-describedby="basic-addon1">
+
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('edad').valid && 
+                    (crearUsuariosForm.get('edad').dirty || crearUsuariosForm.get('edad').touched)" [class.invalid]="crearUsuariosForm.get('edad').invalid && 
+                       (crearUsuariosForm.get('edad').dirty || crearUsuariosForm.get('edad').touched)"
+                        class="fa-regular fa-address-card"></i>
+                </span>
+                <input formControlName="edad" type="number" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Edad" required aria-describedby="basic-addon1">
+            </div>
+            <!-- 
+            <div class="mb-3">
+                <label formControlName="imagen" for="formFile" class="form-label formFile shadow-none">Seleccione foto
+                    de perfil</label>
+                <input class="form-control bg-x" type="file" id="formFile">
+            </div> -->
+
+
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i [class.valid]="crearUsuariosForm.get('imagen').valid && 
+                    (crearUsuariosForm.get('imagen').dirty || crearUsuariosForm.get('imagen').touched)"
+                        class="fa-solid fa-image"></i>
+                </span>
+                <input formControlName="imagen" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Link imagen" aria-describedby="basic-addon1">
+            </div>
+
+
+            <p>Creador:</p>
+            <div *ngIf="authService.userData as user" class="input-group mb-3">
+                <span class="input-group-text bg-y border-0" id="basic-addon1">
+                    <i class="fa-solid fa-user-tag gris"></i>
+                </span>
+                <input readonly formControlName="creador" type="text" class="form-control bg-x border-0 shadow-none"
+                    placeholder="Nombre"  aria-describedby="basic-addon1">
+            </div>
+
+
+
+            <div class="mt-3 d-grid gap-2">
+                <button [disabled]="crearUsuariosForm.invalid" type="submit"
+                    class="btn btn-success btn-lg border-0 shadow-none">Crear usuario</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

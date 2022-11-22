@@ -1,0 +1,45 @@
+<div class="sidebar" *ngIf="authService.userData as user">
+    <header>
+        <div class="image-text">
+            <a routerLink="/dashboard">
+                <span class="image">
+                    <img src="{{(user.photoURL) ? user.photoURL : './assets/img/usuario.png'}}" alt="">
+                </span>
+            </a>
+
+            <div class="text header-text">
+                <span class="name">{{(user.displayName) ? user.displayName : 'Usuario'}}</span>
+                <span class="email">{{(user.email) ? user.email : user.email }}</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <li class="search-box">
+                <i class="fa-sharp fa-solid fa-magnifying-glass icon"></i>
+                <input type="text" placeholder="Buscar...">
+            </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a routerLink="/dashboard">
+                        <i class="fa-sharp fa-solid fa-address-card icon"></i>
+                        <span class="text nav-text">Perfil</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a (click)="authService.signOut()">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket icon"></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+
+        </div>
+
+    </div>
+</div>

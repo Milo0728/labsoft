@@ -1,0 +1,23 @@
+<div class="contenedor">
+    <div class="body">
+        <img class="logo" src="./assets/img/login.png" alt="logo login">
+        <h1>Gracias por registrarse</h1>
+
+        <div class="formGroup" *ngIf="authService.userData as user">
+            <p class="text-center">Le hemos enviado un correo de verifiación a: <strong class="color-primario">{{ user.email }}</strong>.</p>
+        </div>
+
+        <div class="formGroup">
+            <p class="text-center mb-0">No se olvide de revisar la carpeta de spams</p>
+            <button *ngIf="authService.userData as user" type="button" class="btn btnPrimary color-primario" (click)="authService.SendVerificationMail()">
+                <i class="fas fa-redo-alt color-secundario"></i>
+                Reenviar verificación de correo
+            </button>
+        </div>
+
+        <div class="mt-3">
+            <p>¿Necesitas Volver? <a routerLink="/login">Click aquí</a></p>
+        </div>
+
+    </div>
+</div>

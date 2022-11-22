@@ -1,0 +1,51 @@
+.body {
+    max-width: 700px !important;
+}
+
+.profile-image {
+    position: relative;
+    width: 120px;
+    margin: auto;
+}
+
+.profile-image>img {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-image>button {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+.form-container {
+    max-width: 400px;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+
+.valid {
+    color: greenyellow;
+}
+
+.invalid {
+    color: #f84174;
+}
+
+.form-text {
+    font-size: 12px;
+}
+
+.mensajes {
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.gris{
+    color: #f1f1f1;
+}
